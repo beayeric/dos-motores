@@ -47,11 +47,13 @@ void setup() {
   pinMode (DIRM1, OUTPUT);
   pinMode (ENAM1, OUTPUT);
   digitalWrite(DIRM1,LOW);
+  digitalWrite(ENAM1,HIGH);
 
   pinMode (PULM2, OUTPUT);
   pinMode (DIRM2, OUTPUT);
   pinMode (ENAM2, OUTPUT);
   digitalWrite(DIRM2,LOW);
+  digitalWrite(ENAM2,HIGH);
 
 }
 
@@ -59,7 +61,7 @@ void loop() {
   for (int i=0; i<6400; i++)    //Forward 5000 steps -- calcular tiempo
   {
   
-    digitalWrite(ENAM1,HIGH);
+    
     digitalWrite(PULM1,HIGH);
     delayMicroseconds(50);
     digitalWrite(PULM1,LOW);
@@ -69,7 +71,7 @@ void loop() {
     for (int i=0; i<6400; i++)    //Forward 5000 steps --- calcular tiempo
 
     
-    digitalWrite(ENAM2,HIGH);
+    
     digitalWrite(PULM2,HIGH);
     delayMicroseconds(50);
     digitalWrite(PULM2,LOW);
