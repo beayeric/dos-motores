@@ -38,3 +38,5 @@ void loop() {
     delayMicroseconds(50);
   }
 }
+
+// Set Micro Step: 32 , Connect a 9~42V DC power supply //
