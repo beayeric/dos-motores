@@ -1,13 +1,10 @@
-#include <Arduino.h>
+int PULM1=7; //define Pulse pin
+int DIRM1=6; //define Direction pin
+int ENAM1=5; //define Enable Pin
 
-int PULM1=5; //define Pulse pin Motor 1
-int DIRM1=6; //define Direction pin Motor 1
-int ENAM1=7; //define Enable Pin Motor 1
-
-int PULM2=9; //define Pulse pin Motor 2
-int DIRM2=10; //define Direction pin Motor 2
-int ENAM2=8; //define Enable Pin Motor 2
-
+int PULM2=13; //define Pulse pin
+int DIRM2=11; //define Direction pin
+int ENAM2=10; //define Enable Pin
 void setup() {
   pinMode (PULM1, OUTPUT);
   pinMode (DIRM1, OUTPUT);
@@ -18,9 +15,9 @@ void setup() {
   pinMode (ENAM2, OUTPUT);
 
 }
-    
+
 void loop() {
-  for (int i=0; i<6400; i++)    //Forward 5000 steps -- calcular tiempo
+  for (int i=0; i<6400; i++)    //Forward 5000 steps
   {
     digitalWrite(DIRM1,LOW);
     digitalWrite(ENAM1,HIGH);
@@ -28,18 +25,16 @@ void loop() {
     delayMicroseconds(50);
     digitalWrite(PULM1,LOW);
     delayMicroseconds(50);
-
+ 
   }
 
-    for (int i=0; i<6400; i++)    //Forward 5000 steps --- calcular tiempo
-{
+  for (int i=0; i<6400; i++)    //Forward 5000 steps
+  {
     digitalWrite(DIRM2,LOW);
     digitalWrite(ENAM2,HIGH);
     digitalWrite(PULM2,HIGH);
     delayMicroseconds(50);
     digitalWrite(PULM2,LOW);
     delayMicroseconds(50);
-
   }
-  
 }
